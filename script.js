@@ -3,14 +3,26 @@ var init = function() {
     var cashRegister = {
         total: 0,
         add: function(itemCost) {
-            this.total += itemCost;
+            this.total += itemCost
+        },
+        scan: function(item) {
+            switch (item) {
+                case 'eggs':
+                    this.add(5.00);
+                    break;
+                case 'milk':
+                    this.add(2.50);
+                    break;
+                case 'bread':
+                    this.add(1.00);
+                    break;
+            }
         }
     };
 
-    cashRegister.add(0.98);
-    cashRegister.add(1.23);
-    cashRegister.add(4.99);
-    cashRegister.add(0.45);
+    cashRegister.scan('eggs');
+    cashRegister.scan('milk');
+    cashRegister.scan('bread');
 
 
 
