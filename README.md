@@ -1,2 +1,2 @@
 # cash-register
-A JavaScript project.
+A Codecademy JavaScript project.
