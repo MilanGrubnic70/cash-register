@@ -25,7 +25,10 @@ var init = function() {
             this.total -= lastTransItem;
         }, // void
 
-
+        applyDiscount: function(name) {
+            this.total -= (this.total * (name.discount / 100));
+            console.log("Your total after discount is : " + this.total + ".")
+        }
 
     }; // end of register
 
@@ -45,7 +48,7 @@ var init = function() {
     }
 
     var milan = new staffMember('Milan', 20);
-
+    cashRegister.applyDiscount(milan);
 
 
 }; // end of init
