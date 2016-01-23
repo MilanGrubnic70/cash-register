@@ -22,9 +22,11 @@ var init = function() {
         }, // end of scan
 
         void: function() {
-                this.total -= lastTransItem;
-            } // void
-            
+            this.total -= lastTransItem;
+        }, // void
+
+
+
     }; // end of register
 
     cashRegister.scan('eggs', 2);
@@ -36,6 +38,15 @@ var init = function() {
 
 
     console.log("Your bill is: " + cashRegister.total + ".");
+
+    function staffMember(name, discount) {
+        this.name = name,
+            this.discount = discount
+    }
+
+    var milan = new staffMember('Milan', 20);
+
+
 
 }; // end of init
 
