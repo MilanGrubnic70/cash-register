@@ -5,24 +5,24 @@ var init = function() {
         add: function(itemCost) {
             this.total += itemCost
         },
-        scan: function(item) {
+        scan: function(item, qty) {
             switch (item) {
                 case 'eggs':
-                    this.add(5.00);
+                    this.add(5.00 * qty);
                     break;
                 case 'milk':
-                    this.add(2.50);
+                    this.add(2.50 * qty);
                     break;
                 case 'bread':
-                    this.add(1.00);
+                    this.add(1.00 * qty);
                     break;
             }
         }
     };
 
-    cashRegister.scan('eggs');
-    cashRegister.scan('milk');
-    cashRegister.scan('bread');
+    cashRegister.scan('eggs', 2);
+    cashRegister.scan('milk', 1);
+    cashRegister.scan('bread', 3);
 
 
 
