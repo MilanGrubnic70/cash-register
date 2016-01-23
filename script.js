@@ -3,8 +3,10 @@ var init = function() {
     var cashRegister = {
         total: 0,
         add: function(itemCost) {
-            this.total += itemCost
+            this.total += itemCost;
+            lastTransItem = itemCost;
         },
+
         scan: function(item, qty) {
             switch (item) {
                 case 'eggs':
@@ -16,13 +18,20 @@ var init = function() {
                 case 'bread':
                     this.add(1.00 * qty);
                     break;
-            }
-        }
-    };
+            } // end of switch
+        }, // end of scan
+
+        void: function() {
+                this.total -= lastTransItem;
+            } // void
+            
+    }; // end of register
 
     cashRegister.scan('eggs', 2);
     cashRegister.scan('milk', 1);
     cashRegister.scan('bread', 3);
+
+    cashRegister.void();
 
 
 
